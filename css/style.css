@@ -1,19 +1,101 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body {
     font-size: 16px;
+    overflow-x: hidden;
 
 }
+#Layer_1 {
+    z-index: -5;
+    width: 120%;
+    position: absolute;
+    margin-left: -10%;
+    margin-top: -14%;
+}
+
 header {
     width: 100%;
 }
 header nav {
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+   }
+.topnav {
+    display: inline-block;
+    list-style: none;
 }
-header nav img {
-    margin-left: -10%;
-    margin-top: -14%;
-    width: 120%;
+.topnav li {
+    display: inline-block;
+    font-size: 1.2em;
+    margin: .3em;
+
 }
+.topnav li a {
+    text-decoration: none;
+    color: black;
+}
+.topnav li a:hover {
+    transition: color .1s;
+    color: white;
+}
+
+.container {
+
+    margin: auto;
+    margin-top: 15%;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.container section {
+    width: 40%;
+}
+.container section p {
+    margin: 1em;
+    margin-left: 0;
+    padding-left: .3em;
+    text-indent: -.3em;
+}
+
+#whoami-card {
+    display: block;
+    width: 70%;
+    padding-top: 70%;
+    background-image: url("../img/Foto-van-Iris-Gelissen.jpeg");
+    background-size: cover;
+    background-position-x: center;
+    box-shadow: 2.5em 2.5em #e3a655;
+}
+main section figure img {
+    width: 100%;
+    object-fit: cover;
+}
+
+
+#swatchPicker {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    width: 80%;
+    padding: 5%;
+    border: 1px solid #aaa;
+    border-radius: 1em;
+}
+#swatchPicker .swatch {
+    width: 3.5em;
+    height: 3.5em;
+    padding: 1em;
+    margin: .2em;
+
+    cursor: pointer;
+    border: none;
+}
+
