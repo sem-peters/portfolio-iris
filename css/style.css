@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 16px;
+
+}
+header {
+    width: 100%;
+}
+header nav {
+    width: 100%;
+}
+header nav img {
+    margin-left: -10%;
+    margin-top: -14%;
+    width: 120%;
+}
