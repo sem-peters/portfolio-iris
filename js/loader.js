@@ -1,39 +1,26 @@
-// De huidige view
-var currentView = 'wiebenik';
-
 // Default view initialiseren
 $(document).ready(function() {
-    document.querySelector('#wiebenik').style.display = 'flex';
-    document.querySelector('#contact').style.display = 'none';
-    document.querySelector('#portfolio').style.display = 'none';
+    $('#wiebenik').show();
+    $('#contact').hide();
+    $('#portfolio').hide();
 });
 // Navigatiebalk
 $(document).ready(function() {
-    document.querySelector('#nav-wiebenik').addEventListener("click", changeView);
-    document.querySelector('#nav-portfolio').addEventListener("click", changeView);
-    document.querySelector('#nav-contact').addEventListener("click", changeView);
+    $('#nav-wiebenik').click({param: '#wiebenik'}, changeView);
+    $('#nav-portfolio').click({param: '#portfolio'}, changeView);
+    $('#nav-contact').click({param: '#contact'}, changeView);
 });
 
 // Van pagina / view wisselen:
 function changeView(event) {
-    let targetView = event.currentTarget.id;
-    if (targetView === 'nav-wiebenik' && currentView !== 'wiebenik') {
-        document.querySelector('#portfolio').style.display = 'none';
-        document.querySelector('#contact').style.display = 'none';
-        document.querySelector('#wiebenik').style.display = 'flex';
-        currentView = 'wiebenik';
-    }
-    if (targetView === 'nav-portfolio' && currentView !== 'portfolio') {
-        document.querySelector('#wiebenik').style.display = 'none';
-        document.querySelector('#contact').style.display = 'none';
-        document.querySelector('#portfolio').style.display = 'flex';
-        currentView = 'portfolio';
-    }
-    if (targetView === 'nav-contact' && currentView !== 'contact') {
-        document.querySelector('#wiebenik').style.display = 'none';
-        document.querySelector('#portfolio').style.display = 'none';
-        document.querySelector('#contact').style.display = 'flex';
-        currentView = 'contact';
+    let targetView = $(event.data.param);
+    let currentView = $('.active');
+
+    if (!targetView.hasClass('active')) {
+        currentView.fadeOut();
+        targetView.addClass('active');
+        currentView.removeClass('active');
+        targetView.fadeIn();
     }
 }
 
