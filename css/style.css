@@ -15,6 +15,13 @@ body {
     margin-left: -10%;
     margin-top: -14%;
 }
+#Layer_2 {
+    height: 30%;
+    width: 30%;
+    position: absolute;
+    margin-left: -8%;
+    margin-top: -3%;
+}
 
 header {
     width: 100%;
