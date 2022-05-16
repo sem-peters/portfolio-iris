@@ -197,7 +197,7 @@ main section figure img {
 }
 
 @media only screen and (max-width: 800px) {
-    body {
+    body, header nav {
         font-size: 1.5em;
     }
 }
