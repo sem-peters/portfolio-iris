@@ -56,5 +56,5 @@ function changeThemeColor(event) {
         el.style.fill = color;
     });
     // Verander de boxshadow kleur van de whoami card
-    document.querySelector('#whoami-card').style.boxShadow = '2em 2em ' + color;
+    document.querySelector('#whoami-card').style.boxShadow = '1.3em 1.3em ' + color;
 }

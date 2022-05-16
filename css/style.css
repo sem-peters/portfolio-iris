@@ -3,66 +3,87 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-size: 16px;
     overflow-x: hidden;
     overflow-y: scroll;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Questrial', sans-serif;
 }
+
 #Layer_1 {
-    z-index: -5;
+    z-index: 1;
     width: 120%;
-    position: absolute;
+    position: fixed;
     margin-left: -10%;
     margin-top: -14%;
 }
+
 #Layer_2 {
-    height: 30%;
-    width: 30%;
-    position: absolute;
-    margin-left: -8%;
-    margin-top: -3%;
+    height: 20%;
+    width: 20%;
+    z-index: 2;
+    position: fixed;
+    margin-left: -4%;
+    margin-top: 0%;
 }
 
 header {
     width: 100%;
+    font-size: 1em;
+    font-family: 'Open Sans', serif;
 }
+
 header nav {
     width: 100%;
+    position: fixed;
+    z-index: 2;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    
+}
 
-   }
 .topnav {
+    margin-right: 1%;
     display: inline-block;
     list-style: none;
 }
+
 .topnav li {
     display: inline-block;
     font-size: 1.2em;
     margin: .3em;
 
 }
+
 .topnav li a {
     text-decoration: none;
     color: black;
 }
+
 .topnav li a:hover {
     transition: color .1s;
     color: white;
 }
 
 .container {
-
+    
     margin: auto;
     margin-top: 15%;
     width: 80%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 }
+
 .container section {
     width: 40%;
+    font-size: .9em;
+}
+.container section h1 {
+    /*FONT FAMILY*/
 }
 .container section p {
     margin: 1em;
@@ -73,13 +94,14 @@ header nav {
 
 #whoami-card {
     display: block;
-    width: 70%;
-    padding-top: 70%;
+    width: 80%;
+    padding-top: 80%;
     background-image: url("../img/Foto-van-Iris-Gelissen.jpeg");
     background-size: cover;
     background-position-x: center;
-    box-shadow: 2.5em 2.5em #e3a655;
+    box-shadow: 1.3em 1.3em #e3a655;
 }
+
 main section figure img {
     width: 100%;
     object-fit: cover;
@@ -96,6 +118,7 @@ main section figure img {
     border: 1px solid #aaa;
     border-radius: 1em;
 }
+
 #swatchPicker .swatch {
     width: 3.5em;
     height: 3.5em;
@@ -104,5 +127,16 @@ main section figure img {
 
     cursor: pointer;
     border: none;
+    border-radius: 50%;
 }
 
+@media only screen and (max-width: 1200px) {
+    .container {
+        flex-direction: column-reverse;
+    }
+    .container section {
+        margin: auto;
+        margin-top: 10%;
+        width: 80%;
+    }
+  }
