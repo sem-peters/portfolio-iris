@@ -21,18 +21,18 @@ body {
 }
 
 #Layer_2 {
-    height: 20%;
-    width: 20%;
+    height: 25%;
+    width: 25%;
     z-index: 2;
     position: fixed;
-    margin-left: -4%;
-    margin-top: 0%;
+    margin-left: -6%;
+    margin-top: -1%;
 }
 
 header {
     width: 100%;
     font-size: 1em;
-    font-family: 'Open Sans', serif;
+    font-family: 'Questrial', sans-serif;
 }
 
 header nav {
@@ -42,7 +42,7 @@ header nav {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    
+
 }
 
 .topnav {
@@ -54,7 +54,8 @@ header nav {
 .topnav li {
     display: inline-block;
     font-size: 1.2em;
-    margin: .3em;
+    margin: .6em;
+    margin-top: .3em;
 
 }
 
@@ -69,7 +70,7 @@ header nav {
 }
 
 .container {
-    
+
     margin: auto;
     margin-top: 15%;
     width: 80%;
@@ -82,9 +83,11 @@ header nav {
     width: 40%;
     font-size: .9em;
 }
+
 .container section h1 {
     /*FONT FAMILY*/
 }
+
 .container section p {
     margin: 1em;
     margin-left: 0;
@@ -117,6 +120,7 @@ main section figure img {
     padding: 5%;
     border: 1px solid #aaa;
     border-radius: 1em;
+    box-shadow: 1px 1px 1px 1px #444;
 }
 
 #swatchPicker .swatch {
@@ -128,15 +132,78 @@ main section figure img {
     cursor: pointer;
     border: none;
     border-radius: 50%;
+    box-shadow: 1px 1px 1px #555;
+}
+
+#portfolio {
+    display: block;
+    margin-top: 10%;
+}
+
+#portfolio h1 {
+    text-align: center;
+    margin: auto;
+    margin-bottom: 1em;
+}
+
+#portfolio .flexcontainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#portfolio section {
+    width: 25%;
+    margin: 1%;
+}
+
+#portfolio section figure {}
+
+#portfolio section figure img {
+    width: 100%;
+}
+
+@media only screen and (max-width: 1400px) {
+    body {
+        font-size: 1em;
+    }
 }
 
 @media only screen and (max-width: 1200px) {
+    body {
+        font-size: 1.2em;
+    }
+
+    #Layer_1 {
+        width: 140%;
+    }
+
+    #Layer_2 {
+        width: 30%;
+        height: 30%;
+        margin-left: -5%;
+    }
+
     .container {
         flex-direction: column-reverse;
     }
+
     .container section {
         margin: auto;
         margin-top: 10%;
         width: 80%;
     }
-  }
+}
+
+@media only screen and (max-width: 800px) {
+    body {
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    header nav {
+        font-size: 1.6em;
+    }
+}
