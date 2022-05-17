@@ -164,6 +164,43 @@ main section figure img {
     width: 100%;
 }
 
+
+
+/*
+    Hier beginnen de SVG styles
+*/
+
+.cls-1 {
+    fill: none;
+}
+
+.cls-2 {
+    clip-path: url(#clip-path);
+}
+
+.cls-3 {
+    fill: #e3a655;
+}
+
+.st-1 {
+    font-size: 12.89px;
+    fill: #1d1d1b;
+    font-family: BookmanOldStyle, Bookman Old Style;
+}
+
+.st-2 {
+    isolation: isolate;
+}
+
+.st-3 {
+    fill: #c47555;
+}
+
+.st-4 {
+    fill: none;
+    stroke: #1d1d1b;
+    stroke-miterlimit: 10;
+}
 @media only screen and (max-width: 1400px) {
     body {
         font-size: 1em;
@@ -196,14 +233,48 @@ main section figure img {
     }
 }
 
+@media only screen and (max-width: 1000px) {
+    #Layer_2 {
+        width: 20%;
+        height: 20%;
+        margin-top: -1%;
+        margin-left: 0;
+
+    }
+}
+
 @media only screen and (max-width: 800px) {
     body, header nav {
-        font-size: 1.5em;
+        font-size: 1.1em;
     }
 }
 
 @media only screen and (max-width: 600px) {
     header nav {
-        font-size: 1.6em;
+        font-size: 1em;
+        margin-top: -2%;
+    }
+    #portfolio {
+        margin-top: 15%;
+    }
+    #portfolio .flexcontainer {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    #portfolio .flexcontainer section {
+        width: 40%;
+        
+    }
+    #Layer_2 {
+        width: 30%;
+        height: 30%;
+        margin-left: -6%;
+        margin-top: -15%;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    header nav {
+        font-size: .8em;
     }
 }

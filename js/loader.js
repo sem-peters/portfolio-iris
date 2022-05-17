@@ -1,30 +1,52 @@
 // Default view initialiseren
 $(document).ready(function() {
+    // #wiebenik is de default view, vergelijkbaar met de homepage.
     $('#wiebenik').show();
     $('#contact').hide();
     $('#portfolio').hide();
 });
 // Navigatiebalk
 $(document).ready(function() {
+    // Onderstaande jQuery selectors zijn elementen in de navigatiebalk. Als er op één van hen geklikt wordt,
+    // wordt de bijbehorende "view" meegegeven aan changeView(). Vervolgens wordt er met changeView() de huidige view
+    // uitgefade en de nieuwe view ingefade.
     $('#nav-wiebenik').click({param: '#wiebenik'}, changeView);
     $('#nav-portfolio').click({param: '#portfolio'}, changeView);
     $('#nav-contact').click({param: '#contact'}, changeView);
 });
 
+// Het is nodig om views te gebruiken in plaats van aparte html bestanden. Dit omdat ik wil dat de gebruiker van kleur kan
+// veranderen, zonder dat steeds op elke pagina opnieuw in te moeten stellen. Ik zou het met sessies en cookies kunnen doen,
+// maar dat is erg veel werk. Dit is makkelijker.
+
 // Van pagina / view wisselen:
 function changeView(event) {
+
+    // Met event.data.param wordt de view opgehaald waarnaar geswitcht moet worden. Deze moet dus "ingefade" worden.
     let targetView = $(event.data.param);
+
+    // De huidige view wordt gemarkeert met de "active" class. Die selecteer ik hier. De elementen met de active class
+    // worden uitgefade.
     let currentView = $('.active');
 
+    // Als de targetView actief is, betekent dat dat de gebruiker probeert te switchen naar de view die nu actief is.
+    // Het is niet de bedoeling dat de huidige view uitgefade wordt en vervolgens weer ingefade, dus daarom gebeurt er alleen
+    // iets als de targetView NIET actief is.
     if (!targetView.hasClass('active')) {
+
         currentView.fadeOut();
+        targetView.fadeIn();
+        
+        // Om van view te switchen is het belangrijk om de nieuwe view aan te merken als de nieuwe actieve view.
+        // en de oude view te markeren als niet meer actief.
         targetView.addClass('active');
         currentView.removeClass('active');
-        targetView.fadeIn();
+
     }
 }
 
-// Alle kleuren die mogelijk zijn
+// Alle kleuren die mogelijk zijn, zijn in deze array gedefinieerd. Zo kan ik makkelijk alle swatchpicker-buttons hun
+// kleur geven.
 const themeColors = [
     '#C47556',
     '#3B6362',
@@ -40,13 +62,23 @@ const defaultColor = '#E3A655';
 
 // Vul de swatches met een kleur
 $(document).ready(function() {
+
+    // Hiermee worden alle swatchpicker buttons geselecteerd. Dit zijn de knoppen waar op gedrukt kan worden om
+    // de kleur van de website te veranderen.
     const swatches = document.querySelectorAll("#swatchPicker .swatch")
+
+    // Ga door de lijst met kleurknoppen heen
     for (let i = 0; i < swatches.length; i++) {
+
+        // Er zijn net zoveel knoppen als mogelijke kleuren. Ik geef dus knop nummer "i" kleur nummer "i".
         swatches.item(i).style.backgroundColor = themeColors[i];
+
+        // Zorg ervoor dat als er op de knop geklikt wordt, de kleur van de website verandert.
         swatches.item(i).addEventListener("click", changeThemeColor);
     }
 });
 
+// Deze function wordt aangeroepen als er op een kleurknop geklikt is.
 function changeThemeColor(event) {
     // Haal de kleur op
     let color = event.currentTarget.style.backgroundColor;
