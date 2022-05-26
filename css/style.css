@@ -150,7 +150,9 @@ main section figure img {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-content: stretch;
+    align-items: stretch;
 }
 
 #portfolio section {
@@ -164,43 +166,60 @@ main section figure img {
     width: 100%;
 }
 
-
-
-/*
-    Hier beginnen de SVG styles
-*/
-
-.cls-1 {
-    fill: none;
+#contact {
+    display: block;
+    margin-top: 10%;
 }
 
-.cls-2 {
-    clip-path: url(#clip-path);
+#contact h1 {
+    text-align: center;
+    margin: auto;
+    margin-bottom: 1em;
 }
 
-.cls-3 {
-    fill: #e3a655;
+#contact .flexcontainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
-.st-1 {
-    font-size: 12.89px;
-    fill: #1d1d1b;
-    font-family: BookmanOldStyle, Bookman Old Style;
+#contact section {
+    margin: 1%;
 }
 
-.st-2 {
-    isolation: isolate;
+#contact section figure {
+    margin: auto;
+    width: 80%;
 }
 
-.st-3 {
-    fill: #c47555;
+#contact section figure img {
+    max-width: 100%;
 }
 
-.st-4 {
-    fill: none;
-    stroke: #1d1d1b;
-    stroke-miterlimit: 10;
+#contact section figure figcaption {
+    font-size: 1.2em;
+    height: 3em;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: left;
+    justify-content: left;
+    align-items: left;
 }
+
+#contact section figure figcaption p{
+    padding: 0;
+    margin: 0 0 0 0;
+    text-indent: 0;
+}
+
+#contact section figure figcaption p a{
+    text-decoration: none;
+    color: black;
+}
+
 @media only screen and (max-width: 1400px) {
     body {
         font-size: 1em;
@@ -209,21 +228,13 @@ main section figure img {
 
 @media only screen and (max-width: 1200px) {
     body {
-        font-size: 1.2em;
-    }
-
-    #Layer_1 {
-        width: 140%;
-    }
-
-    #Layer_2 {
-        width: 30%;
-        height: 30%;
-        margin-left: -5%;
+        font-size: 1.6em;
     }
 
     .container {
         flex-direction: column-reverse;
+        align-content: center;
+        align-items: center;
     }
 
     .container section {
@@ -231,16 +242,15 @@ main section figure img {
         margin-top: 10%;
         width: 80%;
     }
+
+    #contact {
+        flex-direction: column;
+        width: 50%;
+    }
 }
 
 @media only screen and (max-width: 1000px) {
-    #Layer_2 {
-        width: 20%;
-        height: 20%;
-        margin-top: -1%;
-        margin-left: 0;
 
-    }
 }
 
 @media only screen and (max-width: 800px) {
@@ -264,12 +274,6 @@ main section figure img {
     #portfolio .flexcontainer section {
         width: 40%;
         
-    }
-    #Layer_2 {
-        width: 30%;
-        height: 30%;
-        margin-left: -6%;
-        margin-top: -15%;
     }
 }
 

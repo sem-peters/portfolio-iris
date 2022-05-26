@@ -84,9 +84,22 @@ function changeThemeColor(event) {
     let color = event.currentTarget.style.backgroundColor;
 
     // Verander de kleur van het svg header ding
-    document.querySelectorAll('.cls-3').forEach(function (el) {
-        el.style.fill = color;
-    });
+    // Illustrator heeft het .cls-3 genoemd, vraag me niet waarom
+    $('.cls-3').css("fill", color);
+
     // Verander de boxshadow kleur van de whoami card
-    document.querySelector('#whoami-card').style.boxShadow = '1.3em 1.3em ' + color;
+    $('#whoami-card').css("box-shadow", "1.3em 1.3em " + color);
+}
+
+// In het contact formulier wordt gebruik gemaakt van JavaScript om ervoor te zorgen dat als
+// een gebruiker op het e-mail adres of het telefoonnummer klikt, de tekstwaarde wordt gekopieërd naar
+// diens klipbord.
+$(document).ready(function() {
+    $('#email').click(copyToClipboard);
+    $('#telefoonnummer').click(copyToClipboard);
+});
+
+function copyToClipboard(event) {
+    let copyText = event.currentTarget.innerHTML;
+    navigator.clipboard.writeText(copyText);
 }
