@@ -23,8 +23,8 @@
 }
 
 #portfolio section {
-    width: 25%;
-    margin: 1%;
+    width: 20%;
+    margin: 3%;
 }
 
 #portfolio section figure {
@@ -50,12 +50,13 @@
     width: 100%;
     opacity: 1;
     transition: .5s ease;
-    background-color: whitesmoke;
+    background-color: #C47556;
     box-shadow: 2px 2px 3px #ccc;
     text-align: center;
     font-size: 2em;
-    padding-top: calc(50% - 1em);
+    padding: calc(50% - 1em) .2em;
     border-radius: .5em;
+    color: #111;
 }
 
 @media only screen and (max-width: 600px) {
