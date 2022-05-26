@@ -1,0 +1,48 @@
+/*
+    Hier begint de styling voor de portfolio subpagina
+*/
+
+#portfolio {
+    display: block;
+    margin-top: 10%;
+}
+
+#portfolio h1 {
+    text-align: center;
+    margin: auto;
+    margin-bottom: 1em;
+}
+
+#portfolio .flexcontainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: stretch;
+}
+
+#portfolio section {
+    width: 25%;
+    margin: 1%;
+}
+
+#portfolio section figure {}
+
+#portfolio section figure img {
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    #portfolio {
+        margin-top: 15%;
+    }
+    #portfolio .flexcontainer {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    #portfolio .flexcontainer section {
+        width: 40%;
+        
+    }
+}

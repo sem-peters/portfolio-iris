@@ -1,3 +1,7 @@
+/*
+    Hier is de styling die alle pagina's gebruiken.
+*/
+
 * {
     margin: 0;
     padding: 0;
@@ -10,23 +14,6 @@ body {
     overflow-y: scroll;
     font-family: 'Open Sans', sans-serif;
     font-family: 'Questrial', sans-serif;
-}
-
-#Layer_1 {
-    z-index: 1;
-    width: 120%;
-    position: fixed;
-    margin-left: -10%;
-    margin-top: -14%;
-}
-
-#Layer_2 {
-    height: 25%;
-    width: 25%;
-    z-index: 2;
-    position: fixed;
-    margin-left: -6%;
-    margin-top: -1%;
 }
 
 header {
@@ -95,91 +82,6 @@ header nav {
     text-indent: -.3em;
 }
 
-#portfolio {
-    display: block;
-    margin-top: 10%;
-}
-
-#portfolio h1 {
-    text-align: center;
-    margin: auto;
-    margin-bottom: 1em;
-}
-
-#portfolio .flexcontainer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: stretch;
-    align-items: stretch;
-}
-
-#portfolio section {
-    width: 25%;
-    margin: 1%;
-}
-
-#portfolio section figure {}
-
-#portfolio section figure img {
-    width: 100%;
-}
-
-#contact {
-    display: block;
-    margin-top: 10%;
-}
-
-#contact h1 {
-    text-align: center;
-    margin: auto;
-    margin-bottom: 1em;
-}
-
-#contact .flexcontainer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-#contact section {
-    margin: 1%;
-}
-
-#contact section figure {
-    margin: auto;
-    width: 80%;
-}
-
-#contact section figure img {
-    max-width: 100%;
-}
-
-#contact section figure figcaption {
-    font-size: 1.2em;
-    height: 3em;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: left;
-    justify-content: left;
-    align-items: left;
-}
-
-#contact section figure figcaption p{
-    padding: 0;
-    margin: 0 0 0 0;
-    text-indent: 0;
-}
-
-#contact section figure figcaption p a{
-    text-decoration: none;
-    color: black;
-}
-
 @media only screen and (max-width: 1400px) {
     body {
         font-size: 1em;
@@ -202,11 +104,6 @@ header nav {
         margin-top: 10%;
         width: 80%;
     }
-
-    #contact {
-        flex-direction: column;
-        width: 50%;
-    }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -223,17 +120,6 @@ header nav {
     header nav {
         font-size: 1em;
         margin-top: -2%;
-    }
-    #portfolio {
-        margin-top: 15%;
-    }
-    #portfolio .flexcontainer {
-        flex-direction: row;
-        justify-content: space-around;
-    }
-    #portfolio .flexcontainer section {
-        width: 40%;
-        
     }
 }
 

@@ -2,6 +2,23 @@
     Hier beginnen de SVG styles
 */
 
+#Layer_1 {
+    z-index: 1;
+    width: 120%;
+    position: fixed;
+    margin-left: -10%;
+    margin-top: -14%;
+}
+
+#Layer_2 {
+    height: 25%;
+    width: 25%;
+    z-index: 2;
+    position: fixed;
+    margin-left: -6%;
+    margin-top: -1%;
+}
+
 .cls-1 {
     fill: none;
 }

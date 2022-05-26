@@ -1,0 +1,64 @@
+/*
+    Hier begint de styling voor de contact pagina.
+*/
+
+#contact {
+    display: block;
+    margin-top: 10%;
+}
+
+#contact h1 {
+    text-align: center;
+    margin: auto;
+    margin-bottom: 1em;
+}
+
+#contact .flexcontainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#contact section {
+    margin: 1%;
+}
+
+#contact section figure {
+    margin: auto;
+    width: 80%;
+}
+
+#contact section figure img {
+    max-width: 100%;
+}
+
+#contact section figure figcaption {
+    font-size: 1.2em;
+    height: 3em;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: left;
+    justify-content: left;
+    align-items: left;
+}
+
+#contact section figure figcaption p{
+    padding: 0;
+    margin: 0 0 0 0;
+    text-indent: 0;
+}
+
+#contact section figure figcaption p a{
+    text-decoration: none;
+    color: black;
+}
+
+@media only screen and (max-width: 1200px) {
+    #contact {
+        flex-direction: column;
+        width: 50%;
+    }
+}
