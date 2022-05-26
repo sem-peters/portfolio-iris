@@ -1,0 +1,42 @@
+/* 
+    Hier begint de styling voor de "wie ben ik" pagina
+*/
+
+main section figure img {
+    width: 100%;
+    object-fit: cover;
+}
+
+#whoami-card {
+    display: block;
+    width: 80%;
+    padding-top: 80%;
+    background-image: url("../img/Foto-van-Iris-Gelissen.jpeg");
+    background-size: cover;
+    background-position-x: center;
+    box-shadow: 1.3em 1.3em #e3a655;
+}
+
+#swatchPicker {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    width: 80%;
+    padding: 5%;
+    border: 1px solid #aaa;
+    border-radius: 1em;
+    box-shadow: 1px 1px 1px 1px #444;
+}
+
+#swatchPicker .swatch {
+    width: 3.5em;
+    height: 3.5em;
+    padding: 1em;
+    margin: .2em;
+
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px #555;
+}
