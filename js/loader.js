@@ -89,6 +89,9 @@ function changeThemeColor(event) {
 
     // Verander de boxshadow kleur van de whoami card
     $('#whoami-card').css("box-shadow", "1.3em 1.3em " + color);
+
+    // Verander de kleur van de figcaptions in het portfolio ding
+    $('.portfolio-item figcaption').css("background-color", color);
 }
 
 // In het contact formulier wordt gebruik gemaakt van JavaScript om ervoor te zorgen dat als
@@ -102,4 +105,30 @@ $(document).ready(function() {
 function copyToClipboard(event) {
     let copyText = event.currentTarget.innerHTML;
     navigator.clipboard.writeText(copyText);
+}
+
+// Als er over de portfolio items wordt gehoverd, moet de afbeelding te voorschijn komen en de tekst verdwijnen.
+$(document).ready(function() {
+    $('.portfolio-item').mouseenter(fadeItemEnter);
+    $('.portfolio-item').mouseleave(fadeItemLeave);
+});
+
+// Deze function gaat ervoor zorgen dat de afbeelding tevoorschijn komt en de caption weggaat.
+// Hij wordt aangeroepen als de muis over het element zit.
+function fadeItemEnter(event) {
+    let imgElement = $(this).find("img");
+    let imgCaption = $(this).find("figcaption");
+
+    imgElement.animate({opacity: 1}, 200);
+    imgCaption.animate({opacity: 0}, 300);
+}
+
+// Deze function gaat ervoor zorgen dat de afbeelding weggaat komt en de caption terugkomt.
+// Hij wordt aangeroepen als de muis van het element afgaat.
+function fadeItemLeave(event) {
+    let imgElement = $(this).find("img");
+    let imgCaption = $(this).find("figcaption");
+
+    imgElement.animate({opacity: 0}, 300);
+    imgCaption.animate({opacity: 1}, 200);
 }
