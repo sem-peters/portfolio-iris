@@ -4,13 +4,28 @@
 
 #contact {
     display: block;
+    margin: auto;
     margin-top: 10%;
+    width: 80%;
+}
+
+#contact section {
+    margin: 1%;
+    width: 40%;
+    font-size: .9em;
 }
 
 #contact h1 {
     text-align: center;
     margin: auto;
     margin-bottom: 1em;
+}
+
+#contact section p {
+    margin: 1em;
+    margin-left: 0;
+    padding-left: .3em;
+    text-indent: -.3em;
 }
 
 #contact .flexcontainer {
@@ -20,9 +35,6 @@
     justify-content: space-evenly;
 }
 
-#contact section {
-    margin: 1%;
-}
 
 #contact section figure {
     margin: auto;
@@ -61,6 +73,14 @@
     #contact {
         flex-direction: column;
         width: 50%;
+        align-content: center;
+        align-items: center;
+    }
+
+    #contact section {
+        margin: auto;
+        margin-top: 10%;
+        width: 80%;
     }
 }
 

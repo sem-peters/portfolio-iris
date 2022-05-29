@@ -4,7 +4,14 @@
 
 #portfolio {
     display: block;
+    margin: auto;
     margin-top: 10%;
+    width: 80%;
+}
+
+#portfolio section {
+    width: 20%;
+    margin: 3%;
 }
 
 #portfolio h1 {
@@ -22,9 +29,11 @@
     align-items: stretch;
 }
 
-#portfolio section {
-    width: 20%;
-    margin: 3%;
+#portfolio section p {
+    margin: 1em;
+    margin-left: 0;
+    padding-left: .3em;
+    text-indent: -.3em;
 }
 
 #portfolio section figure {
@@ -57,6 +66,21 @@
     padding: calc(50% - 1em) .2em;
     border-radius: .5em;
     color: #111;
+}
+
+@media only screen and (max-width: 1200px) {
+
+    #portfolio {
+        flex-direction: column-reverse;
+        align-content: center;
+        align-items: center;
+    }
+
+    #portfolio section {
+        margin: auto;
+        margin-top: 10%;
+        width: 80%;
+    }
 }
 
 @media only screen and (max-width: 600px) {
