@@ -35,6 +35,26 @@ function changeView(event) {
     // iets als de targetView NIET actief is.
     if (!targetView.hasClass('active')) {
 
+        // Als we switchen naar wiebenik, moet de navigatie balk lager worden gegooid en absolute worden.
+        if (targetView.is('#wiebenik')) {
+            $('header nav').css('position', 'absolute');
+            $('#Layer_2').css('position', 'absolute');
+            $('#Layer_1').css('position', 'absolute');
+
+            $('#background').animate({height: '72%'}, 200);
+            $('#Layer_1').animate({'top': '72%'}, 200);
+        }
+        // Als we weg switchen vanuit wiebenik, moet de navigatiebalk omhoog en fixed worden.
+        if (currentView.is("#wiebenik")) {
+            $('header nav').css('position', 'fixed');
+            $('#Layer_2').css('position', 'fixed');
+            $('#Layer_1').css('position', 'fixed');
+            $('#background').animate({height: '0%'}, 200);
+            $('#Layer_1').animate({'top': '2%'}, 200);
+
+        }
+
+        // Fade de oude uit, fade de nieuwe in.
         currentView.fadeOut();
         targetView.fadeIn();
         
@@ -86,6 +106,7 @@ function changeThemeColor(event) {
 
     // Verander de kleur van het svg header ding
     // Illustrator heeft het .cls-3 genoemd, vraag me niet waarom
+    $('#background').css('background-color', color);
     $('.cls-3').css("fill", color);
 
     // Verander de boxshadow kleur van de whoami card

@@ -3,9 +3,10 @@
 */
 
 #Layer_1 {
-    z-index: 1;
+    top: 72%;
+    z-index: -1;
     width: 120%;
-    position: fixed;
+    position: absolute;
     margin-left: -10%;
     margin-top: -14%;
 }
@@ -14,7 +15,7 @@
     height: 25%;
     width: 25%;
     z-index: 2;
-    position: fixed;
+    position: absolute;
     margin-left: -6%;
     margin-top: -1%;
 }
