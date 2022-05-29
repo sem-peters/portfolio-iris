@@ -26,11 +26,12 @@
 
 #contact section figure {
     margin: auto;
-    width: 80%;
+    width: 60%;
 }
 
 #contact section figure img {
     max-width: 100%;
+    border-radius: .5em;
 }
 
 #contact section figure figcaption {
@@ -60,5 +61,11 @@
     #contact {
         flex-direction: column;
         width: 50%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #contact section figure figcaption {
+        font-size: 0.8em;
     }
 }

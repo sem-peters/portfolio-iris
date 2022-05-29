@@ -9,12 +9,15 @@ main section figure img {
 
 #whoami-card {
     display: block;
-    width: 80%;
-    padding-top: 80%;
-    background-image: url("../img/Foto-van-Iris-Gelissen.jpeg");
+    height: 60%;
+    padding-top: 0%;
+    background-color: #aaa;
     background-size: cover;
     background-position-x: center;
-    box-shadow: 1.3em 1.3em #e3a655;
+}
+#whoami-card img {
+    max-height: 100%;
+    object-fit: scale-down;
 }
 
 #swatchPicker {

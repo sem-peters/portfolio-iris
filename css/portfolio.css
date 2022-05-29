@@ -35,7 +35,7 @@
 #portfolio section figure img {
     width: 100%;
     height: 100%;
-    opacity: 0;
+    opacity: 1;
     border-radius: 1em;
 
 }
@@ -48,9 +48,9 @@
     right: 0;
     height: 100%;
     width: 100%;
-    opacity: 1;
+    opacity: 0;
     transition: .5s ease;
-    background-color: #C47556;
+    background-color: #E3A655;
     box-shadow: 2px 2px 3px #ccc;
     text-align: center;
     font-size: 2em;

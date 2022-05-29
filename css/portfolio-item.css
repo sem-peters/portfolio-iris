@@ -1,0 +1,9 @@
+.container .pfitem-heading {
+
+    font-size: 2em;
+
+}
+.container .pfitem-heading p {
+    font-size: .8em;
+    color: gray;
+}

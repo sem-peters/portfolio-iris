@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="./css/wiebenik.css" />
     <link rel="stylesheet" href="./css/portfolio.css" />
     <link rel="stylesheet" href="./css/contact.css" />
+    <link rel="stylesheet" href="./css/portfolio-item.css">
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Poppins&family=Questrial&display=swap"
         rel="stylesheet">
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./js/jquery.js"></script>
     <script src="./js/loader.js"></script>
@@ -69,13 +70,13 @@
         <nav>
             <ul class="topnav">
                 <li>
-                    <a href="#" id="nav-wiebenik">Wie ben ik</a>
+                    <a href="javascript:void()" id="nav-wiebenik">Wie ben ik</a>
                 </li>
                 <li>
-                    <a href="#" id="nav-portfolio">Portfolio</a>
+                    <a href="javascript:void()" id="nav-portfolio">Portfolio</a>
                 </li>
                 <li>
-                    <a href="#" id="nav-contact">Contact</a>
+                    <a href="javascript:void()" id="nav-contact">Contact</a>
                 </li>
             </ul>
         </nav>
@@ -104,7 +105,7 @@
         </section>
         <section>
             <figure id="whoami-card">
-
+                <img src="./img/cutout.png" alt="Uitgesneden foto van Iris Gelissen">
             </figure>
         </section>
     </main>
@@ -112,37 +113,37 @@
         <h1>Portfolio</h1>
         <div class="flexcontainer">
             <section>
-                <figure class="portfolio-item">
+                <figure class="portfolio-item" data-course="multimedia-design">
                     <img src="./img/geit.jpg" alt="Afbeelding voor Multimedia Design">
                     <figcaption> Multimedia Design </figcaption>
                 </figure>
             </section>
             <section>
-                <figure class="portfolio-item">
+                <figure class="portfolio-item" data-course="digital-campaign">
                     <img src="./img/geit.jpg" alt="Afbeelding voor Digital Campaign">
                     <figcaption> Digital Campaign </figcaption>
                 </figure>
             </section>
             <section>
-                <figure class="portfolio-item">
+                <figure class="portfolio-item" data-course="media-questions">
                     <img src="./img/geit.jpg" alt="Afbeelding voor Media Questions">
                     <figcaption> Media Questions </figcaption>
                 </figure>
             </section>
             <section>
-                <figure class="portfolio-item">
+                <figure class="portfolio-item" data-course="web-design">
                     <img src="./img/geit.jpg" alt="Afbeelding voor Web Design">
                     <figcaption> Web Design </figcaption>
                 </figure>
             </section>
             <section>
-                <figure class="portfolio-item">
+                <figure class="portfolio-item" data-course="business-model-canvas">
                     <img src="./img/geit.jpg" alt="Afbeelding voor Business Model Canvas">
                     <figcaption> Business Model Canvas </figcaption>
                 </figure>
             </section>
             <section>
-                <figure class="portfolio-item">
+                <figure class="portfolio-item" data-course="immersive-space">
                     <img src="./img/geit.jpg" alt="Afbeelding voor Immersive Space">
                     <figcaption> Immersive Space </figcaption>
                 </figure>
@@ -152,12 +153,12 @@
     <div id="contact" class="container">
         <h1>Contact</h1>
         <div class="flexcontainer">
-            
+
             <section>
                 <figure>
                     <img src="./img/placeholder.jpg" alt="E-mail symbool">
                     <figcaption>
-                        <p ><a href="#email" id="email">ipmgelissen@gmail.com</a></p>
+                        <p><a href="javascript:void()" id="email">ipmgelissen@gmail.com</a></p>
                         <p><a href="mailto:ipmgelissen@gmail.com">Mail mij!</a></p>
                     </figcaption>
                 </figure>
@@ -166,13 +167,52 @@
                 <figure>
                     <img src="./img/placeholder.jpg" alt="Telefoon symbool">
                     <figcaption>
-                        <p><a href="#telefoonnummer" id="telefoonnummer">06-43862321</a></p>
+                        <p><a href="javascript:void()" id="telefoonnummer">06-43862321</a></p>
                         <p><a href="tel:0643862321">Bel mij!</a></p>
 
-                   </figcaption>
+                    </figcaption>
                 </figure>
             </section>
         </div>
+    </div>
+
+    <div id="multimedia-design" class="container">
+        <section class="pfitem-heading">
+            <p>Terug naar portfolio</p>
+            <h1> Multimedia Design</h1>
+        </section>
+    </div>
+    <div id="digital-campaign" class="container">
+        <section class="pfitem-heading">
+            <p>Terug naar portfolio</p>
+            <h1> Digital Campaign</h1>
+        </section>
+    </div>
+    <div id="media-questions" class="container">
+        <section class="pfitem-heading">
+            <p>Terug naar portfolio</p>
+            <h1> Media Questions</h1>
+        </section>
+    </div>
+    <div id="web-design" class="container">
+        <section class="pfitem-heading">
+            <p>Terug naar portfolio</p>
+            <h1> Web Design</h1>
+        </section>
+
+    </div>
+    <div id="business-model-canvas" class="container">
+        <section class="pfitem-heading">
+            <p>Terug naar portfolio</p>
+            <h1> Business Model Canvas</h1>
+        </section>
+
+    </div>
+    <div id="immersive-space" class="container">
+        <section class="pfitem-heading">
+            <p>Terug naar portfolio</p>
+            <h1> Immersive Space</h1>
+        </section>
     </div>
 </body>
 

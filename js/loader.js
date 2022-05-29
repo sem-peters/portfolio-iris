@@ -1,9 +1,9 @@
 // Default view initialiseren
 $(document).ready(function() {
+
     // #wiebenik is de default view, vergelijkbaar met de homepage.
+    $('.container').hide();
     $('#wiebenik').show();
-    $('#contact').hide();
-    $('#portfolio').hide();
 });
 // Navigatiebalk
 $(document).ready(function() {
@@ -21,10 +21,11 @@ $(document).ready(function() {
 
 // Van pagina / view wisselen:
 function changeView(event) {
-
     // Met event.data.param wordt de view opgehaald waarnaar geswitcht moet worden. Deze moet dus "ingefade" worden.
     let targetView = $(event.data.param);
-
+    if (targetView.length === 0) {
+        targetView = $("#" + event.currentTarget.dataset.course);
+    }
     // De huidige view wordt gemarkeert met de "active" class. Die selecteer ik hier. De elementen met de active class
     // worden uitgefade.
     let currentView = $('.active');
@@ -119,8 +120,8 @@ function fadeItemEnter(event) {
     let imgElement = $(this).find("img");
     let imgCaption = $(this).find("figcaption");
 
-    imgElement.animate({opacity: 1}, 200);
-    imgCaption.animate({opacity: 0}, 300);
+    imgCaption.animate({opacity: 1}, 200);
+    imgElement.animate({opacity: 0}, 200);
 }
 
 // Deze function gaat ervoor zorgen dat de afbeelding weggaat komt en de caption terugkomt.
@@ -129,6 +130,14 @@ function fadeItemLeave(event) {
     let imgElement = $(this).find("img");
     let imgCaption = $(this).find("figcaption");
 
-    imgElement.animate({opacity: 0}, 300);
-    imgCaption.animate({opacity: 1}, 200);
+    imgElement.animate({opacity: 1}, 200);
+    imgCaption.animate({opacity: 0}, 200);
 }
+
+// Portfolio-items kunnen net als de navigatiebalk gebruikt worden om van view te wisselen.
+// Ze gebruiken het data-course attribuut in hun HTML als sein van welke view ze moeten laden.
+// Ze hebben ook een "backbutton", die de gebruiker terugbrengt naar het portfolio.
+$(document).ready(function() {
+    $('.portfolio-item').click({param: $(this).data.course}, changeView);
+    $('.backbutton').click({param: "#portfolio"}, changeView);
+});
