@@ -68,24 +68,3 @@
     text-decoration: none;
     color: black;
 }
-
-@media only screen and (max-width: 1200px) {
-    #contact {
-        flex-direction: column;
-        width: 50%;
-        align-content: center;
-        align-items: center;
-    }
-
-    #contact section {
-        margin: auto;
-        margin-top: 10%;
-        width: 80%;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    #contact section figure figcaption {
-        font-size: 0.8em;
-    }
-}

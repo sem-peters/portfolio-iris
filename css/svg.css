@@ -52,51 +52,16 @@
     stroke-miterlimit: 10;
 }
 
-@media only screen and (max-width: 1400px) {
-}
-
-@media only screen and (max-width: 1200px) {
-
-    #Layer_1 {
-        width: 140%;
-    }
-
-    #Layer_2 {
-        width: 30%;
-        height: 30%;
-        margin-left: -5%;
-    }
-}
-
 @media only screen and (max-width: 1000px) {
-    #Layer_2 {
-        width: 20%;
-        height: 20%;
-        margin-top: -1%;
-        margin-left: 0;
-
-    }
-    #Layer_1 {
-        margin-left: -15%;
-    }
-}
-
-@media only screen and (max-width: 800px) {
-
-}
-
-@media only screen and (max-width: 600px) {
-
-
-    #Layer_2 {
-        width: 30%;
-        height: 30%;
-        margin-left: -6%;
-        margin-top: -15%;
-    }
     
+    #Layer_1 {
+        top: 2%;
+    }
 }
 
-@media only screen and (max-width: 420px) {
-
+@media only screen and (max-width: 400px) {
+    
+    #Layer_2 {
+        top: -5%;
+    }
 }
