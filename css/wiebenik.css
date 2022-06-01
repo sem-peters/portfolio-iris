@@ -88,17 +88,90 @@
     background-color: #E3A655;
 }
 
-@media only screen and (max-width: 1200px) {
-
+@media only screen and (max-width: 1000px) {
     #wiebenik {
+        margin: auto;
+        margin-top: 15%;
+        width: 80%;
+        display: flex;
         flex-direction: column-reverse;
-        align-content: center;
+        justify-content: flex-start;
         align-items: center;
     }
-
+    
     #wiebenik section {
-        margin: auto;
-        margin-top: 10%;
-        width: 80%;
+        width: 70%;
+        font-size: .9em;
+    }
+    
+    #wiebenik section p {
+        margin: 1em;
+        margin-left: 0;
+        padding-left: .3em;
+        text-indent: -.3em;
+    }
+    
+    #whoami-card {
+        position: relative;
+        z-index: -1;
+        display: block;
+        height: auto;
+        width: 100%;
+        padding-top: 0%;
+        top: -10%;
+    
+        background: none;
+        mask: none;
+        -webkit-mask: none;
+    
+
+    
+    }
+    #whoami-card img {
+        max-height: 100%;
+        object-fit: scale-down;
+        width: 100%;
+
+        background-image: url("../img/blob.svg");
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: 100%;
+
+        -webkit-mask-image: url("../img/blob.svg");
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: top center;
+        -webkit-mask-size: 100%;
+    
+        mask-image: url("../img/blob.svg");
+        mask-repeat: no-repeat;   
+        mask-position: top center;
+        mask-size: 100%;
+    }
+    #whoami-text {
+        margin-top: -35%;
+    }
+    
+    #swatchPicker {
+        background-color: white;
+    }
+    
+    #swatchPicker .swatch {
+        width: 4.5em;
+        height: 4.5em;
+        padding: 1em;
+    }
+    
+
+}
+@media only screen and (max-width: 600px) {
+    
+    #swatchPicker {
+        background-color: white;
+    }
+    
+    #swatchPicker .swatch {
+        width: 2.5em;
+        height: 2.5em;
+        padding: 1em;
     }
 }

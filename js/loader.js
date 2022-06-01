@@ -39,7 +39,7 @@ function changeView(event) {
         if (targetView.is('#wiebenik')) {
             $('header nav').css('position', 'absolute');
             $('#Layer_2').css('position', 'absolute');
-            $('#Layer_1').css('position', 'absolute');
+            $('#Layer_1').css('position', 'absolute').css('z-index', -1);
 
             $('#background').animate({height: '72%'}, 200);
             $('#Layer_1').animate({'top': '72%'}, 200);
@@ -48,7 +48,7 @@ function changeView(event) {
         if (currentView.is("#wiebenik")) {
             $('header nav').css('position', 'fixed');
             $('#Layer_2').css('position', 'fixed');
-            $('#Layer_1').css('position', 'fixed');
+            $('#Layer_1').css('position', 'fixed').css('z-index', 1);
             $('#background').animate({height: '0%'}, 200);
             $('#Layer_1').animate({'top': '2%'}, 200);
 

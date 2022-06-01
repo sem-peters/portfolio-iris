@@ -68,31 +68,31 @@
     color: #111;
 }
 
-@media only screen and (max-width: 1200px) {
-
-    #portfolio {
-        flex-direction: column-reverse;
-        align-content: center;
-        align-items: center;
+@media only screen and (max-width: 1000px) {
+    #portfolio section {
+        width: 25%;
     }
 
-    #portfolio section {
-        margin: auto;
-        margin-top: 10%;
-        width: 80%;
+    #portfolio section figure figcaption {
+        transition: .5s ease;
+        background-color: #E3A655;
+        box-shadow: 2px 2px 3px #ccc;
+        text-align: center;
+        font-size: 1em;
+
     }
 }
-
 @media only screen and (max-width: 600px) {
-    #portfolio {
-        margin-top: 15%;
-    }
-    #portfolio .flexcontainer {
-        flex-direction: row;
-        justify-content: space-around;
-    }
-    #portfolio .flexcontainer section {
+    #portfolio section {
         width: 40%;
-        
+    }
+
+}
+@media only screen and (max-width: 400px) {
+    #portfolio section {
+        width: 70%;
+    }
+    #Layer_2 {
+        top: -5%;
     }
 }
