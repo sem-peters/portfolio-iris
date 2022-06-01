@@ -1,10 +1,19 @@
-// Default view initialiseren
-$(document).ready(function() {
+// De card Y position variabele wordt gebruikt om bij te houden waar de foto in de blob staat op het scherm.
+// Het is de bedoeling dat de golvende headerbalk gepositioneerd wordt aan de hand van de positie van
+// de fotoblob. Hij is hier nul omdat de site nog niet geladen is, ik geef hem later een waarde.
+let cardYPosition = 0;
 
-    // #wiebenik is de default view, vergelijkbaar met de homepage.
-    $('.container').hide();
-    $('#wiebenik').show();
-});
+// Als de grootte van het browserscherm verandert, verandert de balk mee!
+window.onresize = function() {
+    let card = $('#whoami-card');
+    if ($('#wiebenik').hasClass('active')) {
+        let cardYPosition = card.position()['top'] + (1/2) * $('#whoami-card').height();
+        $('#Layer_1').css({'top': cardYPosition+'px'}, 100);
+        $('#background').css({'height': cardYPosition+'px'}, 100);
+    }
+}
+
+
 // Navigatiebalk
 $(document).ready(function() {
     // Onderstaande jQuery selectors zijn elementen in de navigatiebalk. Als er op één van hen geklikt wordt,
@@ -13,6 +22,24 @@ $(document).ready(function() {
     $('#nav-wiebenik').click({param: '#wiebenik'}, changeView);
     $('#nav-portfolio').click({param: '#portfolio'}, changeView);
     $('#nav-contact').click({param: '#contact'}, changeView);
+});
+
+// Default view initialiseren
+$(document).ready(function() {
+
+    // #wiebenik is de default view, vergelijkbaar met de homepage.
+    $('.container').hide();
+    $('#wiebenik').show();
+
+    $('header nav').css('position', 'absolute');
+    $('#Layer_2').css('position', 'absolute');
+    $('#Layer_1').css('position', 'absolute').css('z-index', -1);
+
+    let card = $('#whoami-card');
+    let cardYPosition = card.position()['top'] + (1/2) * $('#whoami-card').height();
+    $('#Layer_1').animate({'top': cardYPosition+'px'}, 100);
+    $('#background').animate({'height': cardYPosition+'px'}, 100);
+
 });
 
 // Het is nodig om views te gebruiken in plaats van aparte html bestanden. Dit omdat ik wil dat de gebruiker van kleur kan
@@ -34,15 +61,22 @@ function changeView(event) {
     // Het is niet de bedoeling dat de huidige view uitgefade wordt en vervolgens weer ingefade, dus daarom gebeurt er alleen
     // iets als de targetView NIET actief is.
     if (!targetView.hasClass('active')) {
-
+        
+        // Fade de oude uit, fade de nieuwe in.
+        currentView.fadeOut();
+        targetView.fadeIn();
         // Als we switchen naar wiebenik, moet de navigatie balk lager worden gegooid en absolute worden.
         if (targetView.is('#wiebenik')) {
+
+            
             $('header nav').css('position', 'absolute');
             $('#Layer_2').css('position', 'absolute');
             $('#Layer_1').css('position', 'absolute').css('z-index', -1);
 
-            $('#background').animate({height: '72%'}, 200);
-            $('#Layer_1').animate({'top': '72%'}, 200);
+            let card = $('#whoami-card');
+            let cardYPosition = card.position()['top'] + (1/2) * $('#whoami-card').height();
+            $('#Layer_1').animate({'top': cardYPosition+'px'}, 100);
+            $('#background').animate({'height': cardYPosition+'px'}, 100);
         }
         // Als we weg switchen vanuit wiebenik, moet de navigatiebalk omhoog en fixed worden.
         if (currentView.is("#wiebenik")) {
@@ -53,10 +87,7 @@ function changeView(event) {
             $('#Layer_1').animate({'top': '2%'}, 200);
 
         }
-
-        // Fade de oude uit, fade de nieuwe in.
-        currentView.fadeOut();
-        targetView.fadeIn();
+        
         
         // Om van view te switchen is het belangrijk om de nieuwe view aan te merken als de nieuwe actieve view.
         // en de oude view te markeren als niet meer actief.
