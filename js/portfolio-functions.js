@@ -19,17 +19,15 @@ function changeView(event) {
     if (!targetView.hasClass('active')) {
         
         // Fade de oude uit, fade de nieuwe in.
-        currentView.fadeOut();
-        targetView.fadeIn();
+        currentView.fadeOut(250);
+        targetView.fadeIn(250);
         // Als we switchen naar wiebenik, moet de navigatie balk lager worden gegooid en absolute worden.
         if (targetView.is('#wiebenik')) {
 
-            
             $('header nav').css('position', 'absolute');
             $('#Layer_2').css('position', 'absolute');
             $('#Layer_1').css('position', 'absolute').css('z-index', -1);
-
-  
+            
             let card = $('#whoami-card');
             let cardYPosition = card.position()['top'] + $('#whoami-card').height();
             $('#Layer_1').animate({
@@ -38,18 +36,23 @@ function changeView(event) {
             $('#background').animate({
                 'height': cardYPosition + 'px'
             }, 250);
+            
         }
         // Als we weg switchen vanuit wiebenik, moet de navigatiebalk omhoog en fixed worden.
         if (currentView.is("#wiebenik")) {
             $('header nav').css('position', 'fixed');
             $('#Layer_2').css('position', 'fixed');
             $('#Layer_1').css('position', 'fixed').css('z-index', 1);
-            $('#background').animate({height: '0%'}, 250);
-            $('#Layer_1').animate({'top': '2%'}, 250);
-
+            $('#Layer_1').animate({
+                'top': '2%'
+            }, 250);
+            $('#background').animate({
+                'height': '0%'
+            }, 250);
+            
         }
         
-        
+
         // Om van view te switchen is het belangrijk om de nieuwe view aan te merken als de nieuwe actieve view.
         // en de oude view te markeren als niet meer actief.
         targetView.addClass('active');
@@ -65,8 +68,14 @@ function changeThemeColor(event) {
 
     // Verander de kleur van het svg header ding
     // Illustrator heeft het .cls-3 genoemd, vraag me niet waarom
-    $('#background').css('background-color', color);
-    $('.cls-3').css("fill", color);
+    $('#background').css({
+        "background-color": color,
+        transition: "background-color 0.2s"
+    });
+    $('.cls-3').css({
+        "fill": color,
+        transition: "fill 0.2s"
+    });
 
     // Verander de kleur van de figcaptions in het portfolio ding
     $('.portfolio-item figcaption').css("background-color", color);
@@ -83,8 +92,12 @@ function fadeItemEnter(event) {
     let imgElement = $(this).find("img");
     let imgCaption = $(this).find("figcaption");
 
-    imgCaption.animate({opacity: 1}, 200);
-    imgElement.animate({opacity: 0}, 200);
+    imgCaption.animate({
+        opacity: 1
+    }, 200);
+    imgElement.animate({
+        opacity: 0
+    }, 200);
 }
 
 // Deze function gaat ervoor zorgen dat de afbeelding weggaat komt en de caption terugkomt.
@@ -93,6 +106,10 @@ function fadeItemLeave(event) {
     let imgElement = $(this).find("img");
     let imgCaption = $(this).find("figcaption");
 
-    imgElement.animate({opacity: 1}, 200);
-    imgCaption.animate({opacity: 0}, 200);
+    imgElement.animate({
+        opacity: 1
+    }, 200);
+    imgCaption.animate({
+        opacity: 0
+    }, 200);
 }

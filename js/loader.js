@@ -10,10 +10,10 @@ window.onresize = function () {
         let cardYPosition = card.position()['top'] + $('#whoami-card').height();
         $('#Layer_1').css({
             'top': cardYPosition + 'px'
-        }, 100);
+        });
         $('#background').css({
             'height': cardYPosition + 'px'
-        }, 100);
+        });
     }
     console.log("onresize happened!")
 }
