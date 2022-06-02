@@ -52,7 +52,7 @@ header nav {
 }
 
 .topnav li a:hover {
-    transition: color .1s;
+    transition: color .5s;
     color: white;
 }
 @media only screen and (max-width: 1000) {

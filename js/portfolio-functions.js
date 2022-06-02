@@ -29,18 +29,23 @@ function changeView(event) {
             $('#Layer_2').css('position', 'absolute');
             $('#Layer_1').css('position', 'absolute').css('z-index', -1);
 
+  
             let card = $('#whoami-card');
-            let cardYPosition = card.position()['top'] + (1/2) * $('#whoami-card').height();
-            $('#Layer_1').animate({'top': cardYPosition+'px'}, 100);
-            $('#background').animate({'height': cardYPosition+'px'}, 100);
+            let cardYPosition = card.position()['top'] + $('#whoami-card').height();
+            $('#Layer_1').animate({
+                'top': cardYPosition + 'px'
+            }, 250);
+            $('#background').animate({
+                'height': cardYPosition + 'px'
+            }, 250);
         }
         // Als we weg switchen vanuit wiebenik, moet de navigatiebalk omhoog en fixed worden.
         if (currentView.is("#wiebenik")) {
             $('header nav').css('position', 'fixed');
             $('#Layer_2').css('position', 'fixed');
             $('#Layer_1').css('position', 'fixed').css('z-index', 1);
-            $('#background').animate({height: '0%'}, 200);
-            $('#Layer_1').animate({'top': '2%'}, 200);
+            $('#background').animate({height: '0%'}, 250);
+            $('#Layer_1').animate({'top': '2%'}, 250);
 
         }
         

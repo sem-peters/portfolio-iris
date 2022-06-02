@@ -7,7 +7,7 @@ let cardYPosition = 0;
 window.onresize = function () {
     let card = $('#whoami-card');
     if ($('#wiebenik').hasClass('active')) {
-        let cardYPosition = card.position()['top'] + (1 / 2) * $('#whoami-card').height();
+        let cardYPosition = card.position()['top'] + $('#whoami-card').height();
         $('#Layer_1').css({
             'top': cardYPosition + 'px'
         }, 100);
@@ -51,17 +51,15 @@ $(document).ready(function () {
 // Alle kleuren die mogelijk zijn, zijn in deze array gedefinieerd. Zo kan ik makkelijk alle swatchpicker-buttons hun
 // kleur geven.
 const themeColors = [
-    '#C47556',
     '#3B6362',
     '#DAA989',
     '#B5C5BB',
     '#F2E8C4',
     '#C5BFA5',
-    '#E3A655',
     '#87866A',
     '#B6CEF2'
 ];
-const defaultColor = '#E3A655';
+const defaultColor = '#3B6362';
 
 // Vul de swatches met een kleur
 $(document).ready(function () {
@@ -111,13 +109,13 @@ $(window).on("load", function () {
     setTimeout(function (){
   
         let card = $('#whoami-card');
-        let cardYPosition = card.position()['top'] + (1 / 2) * $('#whoami-card').height();
+        let cardYPosition = card.position()['top'] + $('#whoami-card').height();
         $('#Layer_1').animate({
             'top': cardYPosition + 'px'
-        }, 200);
+        }, 250);
         $('#background').animate({
             'height': cardYPosition + 'px'
-        }, 200);
+        }, 250);
                   
       }, 500); // How long you want the delay to be, measured in milliseconds.
 });
