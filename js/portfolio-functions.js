@@ -17,41 +17,48 @@ function changeView(event) {
     // Het is niet de bedoeling dat de huidige view uitgefade wordt en vervolgens weer ingefade, dus daarom gebeurt er alleen
     // iets als de targetView NIET actief is.
     if (!targetView.hasClass('active')) {
-        
-        // Fade de oude uit, fade de nieuwe in.
-        currentView.fadeOut(250);
-        targetView.fadeIn(250);
-        // Als we switchen naar wiebenik, moet de navigatie balk lager worden gegooid en absolute worden.
-        if (targetView.is('#wiebenik')) {
 
-            $('header nav').css('position', 'absolute');
-            $('#Layer_2').css('position', 'absolute');
-            $('#Layer_1').css('position', 'absolute').css('z-index', -1);
+        // Fade de oude uit, fade de nieuwe in.
+        currentView.fadeOut(250, function () {
+            targetView.fadeIn(250)
+                // Als we switchen naar wiebenik, moet de navigatie balk lager worden gegooid en absolute worden.
+                if (targetView.is('#wiebenik')) {
+
+                    $('header nav').css('position', 'absolute');
+                    $('#Layer_2').css('position', 'absolute');
+                    $('#Layer_1').css('position', 'absolute').css('z-index', -1);
+                    $('#background').css('z-index', -1);
+
+
+                    let card = $('#whoami-card');
+                    let cardYPosition = card.position()['top'] + $('#whoami-card').height();
+                    $('#Layer_1').animate({
+                        'top': cardYPosition + 'px'
+                    }, 200);
+                    $('#background').animate({
+                        'height': cardYPosition + 'px'
+                    }, 200);
+
+                }
+                // Als we weg switchen vanuit wiebenik, moet de navigatiebalk omhoog en fixed worden.
+                if (currentView.is("#wiebenik")) {
+                    $('#background').css('z-index', 1);
+                    $('header nav').css('position', 'fixed');
+                    $('#Layer_2').css('position', 'fixed');
+                    $('#Layer_1').css('position', 'fixed').css('z-index', 1);
+                    $('#Layer_1').animate({
+                        'top': '2%'
+                    }, 200);
+                    $('#background').animate({
+                        'height': '0%'
+                    }, 200);
+
+                }
             
-            let card = $('#whoami-card');
-            let cardYPosition = card.position()['top'] + $('#whoami-card').height();
-            $('#Layer_1').animate({
-                'top': cardYPosition + 'px'
-            }, 250);
-            $('#background').animate({
-                'height': cardYPosition + 'px'
-            }, 250);
-            
-        }
-        // Als we weg switchen vanuit wiebenik, moet de navigatiebalk omhoog en fixed worden.
-        if (currentView.is("#wiebenik")) {
-            $('header nav').css('position', 'fixed');
-            $('#Layer_2').css('position', 'fixed');
-            $('#Layer_1').css('position', 'fixed').css('z-index', 1);
-            $('#Layer_1').animate({
-                'top': '2%'
-            }, 250);
-            $('#background').animate({
-                'height': '0%'
-            }, 250);
-            
-        }
-        
+
+        });
+
+
 
         // Om van view te switchen is het belangrijk om de nieuwe view aan te merken als de nieuwe actieve view.
         // en de oude view te markeren als niet meer actief.
