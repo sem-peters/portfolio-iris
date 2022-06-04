@@ -135,5 +135,5 @@ const repositionFooter = () => {
     } else {
         newFooterPosition = $(window).height();
     }
-    footer.css(top, newFooterPosition);
+    footer.css('top', newFooterPosition);
 }
