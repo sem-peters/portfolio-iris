@@ -59,7 +59,7 @@
     width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-color: #C47556;
+    background-color: #3B6362;
     box-shadow: 2px 2px 3px #ccc;
     text-align: center;
     font-size: 2em;
@@ -75,7 +75,7 @@
 
     #portfolio section figure figcaption {
         transition: .5s ease;
-        background-color: #C47556;
+        background-color: #3B6362;
         box-shadow: 2px 2px 3px #ccc;
         text-align: center;
         font-size: 1em;

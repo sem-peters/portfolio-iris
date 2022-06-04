@@ -18,11 +18,14 @@ function changeView(event) {
     // iets als de targetView NIET actief is.
     if (!targetView.hasClass('active')) {
 
+        // Bereken waar de footer komt te staan.
+        repositionFooter();
+
         // Fade de oude uit, fade de nieuwe in.
         currentView.fadeOut(250, function () {
             targetView.fadeIn(250)
-                // Als we switchen naar wiebenik, moet de navigatie balk lager worden gegooid en absolute worden.
-                if (targetView.is('#wiebenik')) {
+                // Als we switchen naar home, moet de navigatie balk lager worden gegooid en absolute worden.
+                if (targetView.is('#home')) {
 
                     $('header nav').css('position', 'absolute');
                     $('#Layer_2').css('position', 'absolute');
@@ -30,8 +33,8 @@ function changeView(event) {
                     $('#background').css('z-index', -1);
 
 
-                    let card = $('#whoami-card');
-                    let cardYPosition = card.position()['top'] + $('#whoami-card').height();
+                    let card = $('#blobpicture');
+                    let cardYPosition = card.position()['top'] + $('#blobpicture').height();
                     $('#Layer_1').animate({
                         'top': cardYPosition + 'px'
                     }, 200);
@@ -40,8 +43,8 @@ function changeView(event) {
                     }, 200);
 
                 }
-                // Als we weg switchen vanuit wiebenik, moet de navigatiebalk omhoog en fixed worden.
-                if (currentView.is("#wiebenik")) {
+                // Als we weg switchen vanuit home, moet de navigatiebalk omhoog en fixed worden.
+                if (currentView.is("#home")) {
                     $('#background').css('z-index', 1);
                     $('header nav').css('position', 'fixed');
                     $('#Layer_2').css('position', 'fixed');
@@ -86,6 +89,9 @@ function changeThemeColor(event) {
 
     // Verander de kleur van de figcaptions in het portfolio ding
     $('.portfolio-item figcaption').css("background-color", color);
+
+    // Verander de footer van kleur
+    $('footer').css("background-color", color);
 }
 
 function copyToClipboard(event) {
@@ -119,4 +125,15 @@ function fadeItemLeave(event) {
     imgCaption.animate({
         opacity: 0
     }, 200);
+}
+
+// De footer moet altijd onderaan
+const repositionFooter = () => {
+    let newFooterPosition = 0;
+    if ($(document).height() >= $(window).height()) {
+        newFooterPosition = $(document).height();
+    } else {
+        newFooterPosition = $(window).height();
+    }
+    footer.css(top, newFooterPosition);
 }

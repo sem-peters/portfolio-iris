@@ -7,8 +7,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+html {
+    min-height: 100%;
+}
 
 body {
+    min-height: 100%;
     font-size: 16px;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -54,6 +58,42 @@ header nav {
 .topnav li a:hover {
     transition: color .5s;
     color: white;
+}
+
+footer {
+    width: 100%;
+    margin: 5% auto auto auto;
+    height: 10%;
+    border-top: 2px solid black;
+
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    position: absolute;
+
+    background-color: #3B6362;
+    transition: background-color .2s;
+}
+
+
+.footer-colofon {
+
+}
+.footer-menu {
+
+}
+.footer-menu-item {
+    width: 3.5em;
+    height: 3.5em;
+    padding: 1em;
+    margin: .2em;
+
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px #555;
 }
 @media only screen and (max-width: 1000) {
     

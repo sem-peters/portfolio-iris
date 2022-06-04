@@ -1,28 +1,41 @@
 /* 
-    Hier begint de styling voor de "wie ben ik" pagina
+    Hier begint de styling voor de "Home" pagina
 */
-#wiebenik {
+#home {
     margin: auto;
     margin-top: 15%;
     width: 80%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
 }
-
-#wiebenik section {
+#home>div {
+    margin: auto;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+}
+#home>div:last-child {
+    margin-top: -5%;
+}
+#home>div>section {
     width: 40%;
     font-size: .9em;
 }
 
-#wiebenik section p {
+#home>div>section>p {
     margin: 1em;
     margin-left: 0;
     padding-left: .3em;
     text-indent: -.3em;
 }
 
-#whoami-card {
+#blobpicture {
     position: relative;
     z-index: -1;
     display: block;
@@ -46,7 +59,7 @@
     mask-size: 90%;
 
 }
-#whoami-card img {
+#blobpicture img {
     max-height: 100%;
     object-fit: scale-down;
     width: 100%;
@@ -89,29 +102,43 @@
 }
 
 @media only screen and (max-width: 1000px) {
-    #wiebenik {
+    #home {
         margin: auto;
         margin-top: 15%;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    
+    #home>div {
+        margin: auto;
+
         width: 80%;
         display: flex;
         flex-direction: column-reverse;
         justify-content: flex-start;
         align-items: center;
     }
+
+    #home>div:last-child {
+        margin-top: 15%;
+    }
     
-    #wiebenik section {
-        width: 70%;
+    #home div section {
+        width: 90%;
         font-size: .9em;
     }
     
-    #wiebenik section p {
+    #home div section p {
         margin: 1em;
         margin-left: 0;
         padding-left: .3em;
         text-indent: -.3em;
     }
     
-    #whoami-card {
+    #blobpicture {
         position: relative;
         z-index: -1;
         display: block;
@@ -127,7 +154,7 @@
 
     
     }
-    #whoami-card img {
+    #blobpicture img {
         max-height: 100%;
         object-fit: scale-down;
         width: 100%;
@@ -147,7 +174,7 @@
         mask-position: top center;
         mask-size: 100%;
     }
-    #whoami-text {
+    #home-text {
         margin-top: -35%;
     }
     
