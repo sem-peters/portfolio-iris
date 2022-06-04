@@ -1,13 +1,10 @@
-// De card Y position variabele wordt gebruikt om bij te houden waar de foto in de blob staat op het scherm.
-// Het is de bedoeling dat de golvende headerbalk gepositioneerd wordt aan de hand van de positie van
-// de fotoblob. Hij is hier nul omdat de site nog niet geladen is, ik geef hem later een waarde.
-let cardYPosition = 0;
+const footer = $('footer');
+const card = $('#blobpicture');
 
 // Als de grootte van het browserscherm verandert, verandert de balk mee!
-window.onresize = function () {
-    let card = $('#whoami-card');
-    if ($('#wiebenik').hasClass('active')) {
-        let cardYPosition = card.position()['top'] + $('#whoami-card').height();
+window.onresize = () => {
+    if ($('#home').hasClass('active')) {
+        let cardYPosition = card.position()['top'] + $('#blobpicture').height();
         $('#Layer_1').css({
             'top': cardYPosition + 'px'
         });
@@ -15,17 +12,15 @@ window.onresize = function () {
             'height': cardYPosition + 'px'
         });
     }
-    console.log("onresize happened!")
 }
-
 
 // Navigatiebalk
 $(document).ready(function () {
     // Onderstaande jQuery selectors zijn elementen in de navigatiebalk. Als er op één van hen geklikt wordt,
     // wordt de bijbehorende "view" meegegeven aan changeView(). Vervolgens wordt er met changeView() de huidige view
     // uitgefade en de nieuwe view ingefade.
-    $('#nav-wiebenik').click({
-        param: '#wiebenik'
+    $('#nav-home').click({
+        param: '#home'
     }, changeView);
     $('#nav-portfolio').click({
         param: '#portfolio'
@@ -38,10 +33,11 @@ $(document).ready(function () {
 // Default view initialiseren
 $(document).ready(function () {
 
-    // #wiebenik is de default view, vergelijkbaar met de homepage.
+    // #home is de default view, vergelijkbaar met de homepage.
     $('.container').hide();
-    $('#wiebenik').show();
+    $('#home').show();
 
+    repositionFooter();
     $('header nav').css('position', 'absolute');
     $('#Layer_2').css('position', 'absolute');
     $('#Layer_1').css('position', 'absolute').css('z-index', -1);
@@ -106,10 +102,10 @@ $(document).ready(function () {
 });
 
 $(window).on("load", function () {
-    setTimeout(function (){
+    setTimeout(() => {
   
-        let card = $('#whoami-card');
-        let cardYPosition = card.position()['top'] + $('#whoami-card').height();
+        let card = $('#blobpicture');
+        let cardYPosition = card.position()['top'] + $('#blobpicture').height();
         $('#Layer_1').animate({
             'top': cardYPosition + 'px'
         }, 250);
