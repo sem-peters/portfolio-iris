@@ -12,11 +12,11 @@
 }
 
 #Layer_2 {
-    height: 25%;
-    width: 25%;
+    height: 13em;
+    width: 13em;
     z-index: 2;
     position: absolute;
-    margin-left: -5%;
+    margin-left: 0;
     margin-top: -1.5%;
 }
 
@@ -56,6 +56,10 @@
     
     #Layer_1 {
         top: 2%;
+    }
+    #Layer_2 {
+        height: 9em;
+        width: 9em;
     }
 }
 

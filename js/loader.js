@@ -1,6 +1,16 @@
 const footer = $('footer');
 const card = $('#blobpicture');
 
+// De source van het PDF moet veranderd worden met een random nummer.
+// Anders blijft de pagina laden. Ik weet niet zo goed waarom.
+$(document).ready(() => {
+    let magazineSource = $('#magazine').attr('src')
+    let randomString = generateRandomString();
+    magazineSource += "?random=" + randomString;
+
+    $('#magazine').attr('src', magazineSource)
+})
+
 // Als de grootte van het browserscherm verandert, verandert de balk mee!
 window.onresize = () => {
     if ($('#home').hasClass('active')) {
@@ -37,7 +47,6 @@ $(document).ready(function () {
     $('.container').hide();
     $('#home').show();
 
-    repositionFooter();
     $('header nav').css('position', 'absolute');
     $('#Layer_2').css('position', 'absolute');
     $('#Layer_1').css('position', 'absolute').css('z-index', -1);
@@ -101,6 +110,11 @@ $(document).ready(function () {
     }, changeView);
 });
 
+// De "terug naar portfolio" linkjes
+$(document).ready(function() {
+    $('.back-to-portfolio').click()
+})
+
 $(window).on("load", function () {
     setTimeout(() => {
   
@@ -116,3 +130,11 @@ $(window).on("load", function () {
       }, 500); // How long you want the delay to be, measured in milliseconds.
 });
 
+// Contactformulier
+$(document).ready(() => {
+    $('#Verstuur').click(formSubmit);
+    $('#Naam').on('keyup', valideerNaam)
+    $('#Email').on('keyup', valideerEmail)
+    $('#Onderwerp').on('keyup', valideerOnderwerp)
+    $('#Inhoud').on('keyup', valideerInhoud)
+});
