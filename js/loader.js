@@ -1,14 +1,17 @@
 const footer = $('footer');
 const card = $('#blobpicture');
 
-// De source van het PDF moet veranderd worden met een random nummer.
+// De source van het PDF en videobestand moet veranderd worden met een random nummer.
 // Anders blijft de pagina laden. Ik weet niet zo goed waarom.
 $(document).ready(() => {
     let magazineSource = $('#magazine').attr('src')
+    let bmcVideoSource = $('#bmc_video').attr('src')
     let randomString = generateRandomString();
     magazineSource += "?random=" + randomString;
+    bmcVideoSource += "?random=" + randomString;
 
     $('#magazine').attr('src', magazineSource)
+    $('#bmc_video').attr('src', bmcVideoSource)
 })
 
 // Als de grootte van het browserscherm verandert, verandert de balk mee!
