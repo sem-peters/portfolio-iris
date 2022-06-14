@@ -3,6 +3,7 @@
     font-size: 2em;
 
 }
+
 .pfitem .pfitem-heading p {
     font-size: .8em;
     color: gray;
@@ -18,27 +19,35 @@
     justify-content: space-around;
 }
 
-.pfitem section {
+.pfitem section {}
 
+.backbutton {
+    display: block;
+    margin-bottom: .2em;
 }
 
 .pfitem-text {
+    line-height: 1.1em;
+    text-align: left;
     width: 30%;
     border-right: 1px solid black;
 }
+
 .pfitem-text>a {
-    color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
     font-size: 0.9;
     text-decoration: none;
 }
-.pfitem-text>a:hover{
-    color: rgb(60,60,60);
+
+.pfitem-text>a:hover {
+    color: rgb(60, 60, 60);
     -webkit-transition: .2s;
     transition: .2s;
 }
+
 .pfitem-text>p {
     font-size: 0.9;
-    color: rgb(60,60,60);
+    color: rgb(60, 60, 60);
 }
 
 .pfitem-content {
@@ -48,14 +57,15 @@
     flex-direction: column;
     align-items: center;
 }
+
 .pfitem-content>img {
     width: 100%;
     position: relative;
     box-shadow: 1px 1px 3px #bbb;
 }
-.pfitem-content>embed {
 
-}
+.pfitem-content>embed {}
+
 .pfitem-content>div {
     width: 90%;
     display: flex;
@@ -63,13 +73,16 @@
     align-items: top;
     justify-content: center;
 }
-.pfitem-content>div>.longimage{
+
+.pfitem-content>div>.longimage {
     width: 45%;
     display: inline-block;
 }
+
 .pfitem-content>.longimage {
     width: 45%;
 }
+
 .pfitem-content>video {
     width: 95%;
 }
@@ -78,10 +91,12 @@
     top: 0;
     left: 5%;
 }
+
 .image-2 {
     top: -5%;
     left: 25%;
 }
+
 .image-3 {
     top: 25%;
     left: 5%;
@@ -106,24 +121,45 @@
     top: -35%;
 }
 
+#multimedia-design>.pfitem-content {
+    justify-content: flex-start;
+}
+
+#cmd-project>.pfitem-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    align-content: flex-start;
+    align-items: unset;
+}
+
+#cmd-project>.pfitem-content>img {
+    width: 45%;
+    max-height: 50%;
+}
+
 @media only screen and (max-width: 800px) {
     #webdesign_3 {
         top: -20%;
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
     .pfitem {
         flex-direction: column;
         align-items: center;
     }
-    .pfitem-heading, .pfitem-text {
+
+    .pfitem-heading,
+    .pfitem-text {
         border: none;
         width: 80%;
     }
+
     .pfitem-content {
         border: none;
         width: 80%;
-    } 
+    }
 
 }

@@ -21,7 +21,7 @@
     -ms-flex-wrap: wrap;
 }
 #home>div:last-child {
-    margin-top: -5%;
+    margin-top: -10%;
 }
 #home>div>section {
     width: 40%;
@@ -98,7 +98,24 @@
     top: 0;
     left: 0;
     right: 0;
-    background-color: #3B6362;
+    background-color: #B6CEF2;
+}
+
+#home-text {
+    font-size: medium;
+}
+#home-text a {
+    color: black;
+    text-decoration: none;
+}
+#home-text>p>a:hover {
+
+    transition: .3s;
+    text-decoration: underline;
+}
+
+#home>#tweedemainrow {
+    flex-direction: row-reverse;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -177,6 +194,7 @@
     #home-text {
         margin-top: -35%;
     }
+
     
     #swatchPicker {
         background-color: white;

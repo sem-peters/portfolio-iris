@@ -35,10 +35,13 @@ $(document).ready(function () {
     $('#nav-home').click({
         param: '#home'
     }, changeView);
+    $('.nav-wiebenik').click({
+        param: '#wiebenik'
+    }, changeView);
     $('#nav-portfolio').click({
         param: '#portfolio'
     }, changeView);
-    $('#nav-contact').click({
+    $('.nav-contact').click({
         param: '#contact'
     }, changeView);
 });
@@ -59,15 +62,15 @@ $(document).ready(function () {
 // Alle kleuren die mogelijk zijn, zijn in deze array gedefinieerd. Zo kan ik makkelijk alle swatchpicker-buttons hun
 // kleur geven.
 const themeColors = [
-    '#3B6362',
+    '#B6CEF2',
     '#DAA989',
     '#B5C5BB',
     '#F2E8C4',
     '#C5BFA5',
     '#87866A',
-    '#B6CEF2'
+    '#3B6362'
 ];
-const defaultColor = '#3B6362';
+const defaultColor = '#B6CEF2';
 
 // Vul de swatches met een kleur
 $(document).ready(function () {

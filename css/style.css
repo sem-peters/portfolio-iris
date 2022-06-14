@@ -75,7 +75,7 @@ footer {
     align-items: center;
     position: absolute;
     bottom: 0;
-    background-color: #3B6362;
+    background-color: #B6CEF2;
     transition: background-color .2s;
 }
 
@@ -83,16 +83,14 @@ footer {
     padding-bottom: 12em; /* Hoogte van de footer moet naar onder geduwd worden.*/
 }
 
-.footer-menu-item {
-    width: 3.5em;
-    height: 3.5em;
-    padding: 1em;
-    margin: .2em;
+.footer-menu {
 
     cursor: pointer;
     border: none;
-    border-radius: 50%;
-    box-shadow: 1px 1px 1px #555;
+}
+.footer-menu>ul>li>a {
+    color: black;
+
 }
 
 #contact-mail {
